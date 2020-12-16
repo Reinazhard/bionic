@@ -1591,6 +1591,7 @@ cc_library {
             "gwp_asan",
             "libc_init_dynamic",
             "libc_common_shared",
+            "libunwind-exported",
         ],
     },
 
@@ -1652,8 +1653,6 @@ cc_library {
             strip: {
                 keep_symbols: true,
             },
-
-            whole_static_libs: [ "libgcc_stripped" ],
         },
         x86: {
             // TODO: This is to work around b/24465209. Remove after root cause is fixed.
@@ -1667,8 +1666,6 @@ cc_library {
             strip: {
                 keep_symbols: true,
             },
-
-            whole_static_libs: [ "libgcc_stripped" ],
         },
         x86_64: {
             version_script: ":libc.x86_64.map",
@@ -1678,8 +1675,6 @@ cc_library {
             strip: {
                 keep_symbols: true,
             },
-
-            whole_static_libs: [ "libgcc_stripped" ],
         },
     },
 

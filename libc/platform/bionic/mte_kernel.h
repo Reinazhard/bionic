@@ -35,6 +35,8 @@
 //
 // This interface should not be considered to be stable.
 
+#define HWCAP_ASIMD		(1 << 1)
+
 #ifdef ANDROID_EXPERIMENTAL_MTE
 
 #define HWCAP2_MTE (1 << 10)
