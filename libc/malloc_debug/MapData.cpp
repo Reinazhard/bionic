@@ -207,7 +207,7 @@ const MapEntry* MapData::find(uintptr_t pc, uintptr_t* rel_pc) {
         }
       }
     }
-    *rel_pc = pc - entry->start + entry->load_bias;
+    *rel_pc = pc - entry->start + entry->offset + entry->load_bias;
   }
   return entry;
 }
