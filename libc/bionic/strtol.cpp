@@ -183,11 +183,6 @@ long long strtoll(const char* s, char** end, int base) {
   return StrToI<long long, LLONG_MIN, LLONG_MAX>(s, end, base);
 }
 
-// Public API since L, but not in any header.
-extern "C" long long strtoq(const char* s, char** end, int base) {
-  return strtoll(s, end, base);
-}
-
 unsigned long strtoul(const char* s, char** end, int base) {
   return StrToU<unsigned long, ULONG_MAX>(s, end, base);
 }
@@ -198,9 +193,4 @@ unsigned long long strtoull(const char* s, char** end, int base) {
 
 uintmax_t strtoumax(const char* s, char** end, int base) {
   return StrToU<uintmax_t, UINTMAX_MAX>(s, end, base);
-}
-
-// Public API since L, but not in any header.
-extern "C" unsigned long long strtouq(const char* s, char** end, int base) {
-  return strtoull(s, end, base);
 }
