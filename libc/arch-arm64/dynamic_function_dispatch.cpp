@@ -71,11 +71,8 @@ DEFINE_IFUNC_FOR(memmove) {
 
 typedef int stpcpy_func(char*, const char*);
 DEFINE_IFUNC_FOR(stpcpy) {
-    if (supports_mte(arg->_hwcap2)) {
-        RETURN_FUNC(stpcpy_func, __stpcpy_aarch64_mte);
-    } else {
-        RETURN_FUNC(stpcpy_func, __stpcpy_aarch64);
-    }
+    // TODO: enable the SVE version.
+    RETURN_FUNC(stpcpy_func, __stpcpy_aarch64);
 }
 
 typedef char* strchr_func(const char*, int);
@@ -98,20 +95,14 @@ DEFINE_IFUNC_FOR(strchrnul) {
 
 typedef int strcmp_func(const char*, const char*);
 DEFINE_IFUNC_FOR(strcmp) {
-    if (supports_mte(arg->_hwcap2)) {
-        RETURN_FUNC(strcmp_func, __strcmp_aarch64_mte);
-    } else {
-        RETURN_FUNC(strcmp_func, __strcmp_aarch64);
-    }
+    // TODO: enable the SVE version.
+    RETURN_FUNC(strcmp_func, __strcmp_aarch64);
 }
 
 typedef int strcpy_func(char*, const char*);
 DEFINE_IFUNC_FOR(strcpy) {
-    if (supports_mte(arg->_hwcap2)) {
-        RETURN_FUNC(strcpy_func, __strcpy_aarch64_mte);
-    } else {
-        RETURN_FUNC(strcpy_func, __strcpy_aarch64);
-    }
+    // TODO: enable the SVE version.
+    RETURN_FUNC(strcpy_func, __strcpy_aarch64);
 }
 
 typedef size_t strlen_func(const char*);
@@ -125,11 +116,8 @@ DEFINE_IFUNC_FOR(strlen) {
 
 typedef int strncmp_func(const char*, const char*, int);
 DEFINE_IFUNC_FOR(strncmp) {
-    if (supports_mte(arg->_hwcap2)) {
-        RETURN_FUNC(strncmp_func, __strncmp_aarch64_mte);
-    } else {
-        RETURN_FUNC(strncmp_func, __strncmp_aarch64);
-    }
+    // TODO: enable the SVE version.
+    RETURN_FUNC(strncmp_func, __strncmp_aarch64);
 }
 
 typedef char* strrchr_func(const char*, int);
