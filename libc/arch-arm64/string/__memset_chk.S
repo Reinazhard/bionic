@@ -43,5 +43,3 @@ ENTRY(__memset_chk)
 
   bl __memset_chk_fail
 END(__memset_chk)
-
-NOTE_GNU_PROPERTY()
