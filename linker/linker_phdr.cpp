@@ -170,7 +170,7 @@ bool ElfReader::Load(address_space_params* address_space) {
     return true;
   }
   bool reserveSuccess = ReserveAddressSpace(address_space);
-  if (reserveSuccess && LoadSegments() && FindPhdr() {
+  if (reserveSuccess && LoadSegments() && FindPhdr()) {
     did_load_ = true;
   }
   if (reserveSuccess && !did_load_) {
